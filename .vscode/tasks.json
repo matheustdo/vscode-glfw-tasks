@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "GLFW: build",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-L/usr/lib64",
+        "-lGLEW",
+        "-lGLU",
+        "-lGL",
+        "-lglfw"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "GLFW: run",
+      "command": "${fileDirname}/${fileBasenameNoExtension}"
+    },
+    {
+      "label": "GLFW: build and run",
+      "dependsOrder": "sequence",
+      "dependsOn": ["GLFW: build", "GLFW: run"]
+    }
+  ]
+}
